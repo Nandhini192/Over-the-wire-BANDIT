@@ -1,39 +1,34 @@
 ## 🛰️ **Bandit Level 05 ➜ 06**
 
----
-
 ### **🎯 Challenge Overview**
-
-Inside the `inhere` directory, there are many subdirectories containing multiple files.  
-Only **one file** meets all the following conditions:
-
+Inside the `inhere` directory, there are many subdirectories with multiple files.  
+Only one file matches these conditions:
 - Human-readable  
-- Exactly **1033 bytes** in size  
+- Exactly **1033 bytes**  
 - **Not executable**
 
-The goal is to locate this file and retrieve the password for the next level.
-
 ---
 
-### **🧠 Key Idea**
-
-Manually checking each file is inefficient.  
-The `find` command is used to search recursively and apply filters for file size, readability, and execution permissions.
-
----
-
-### **🧭 Method Used**
-
+### **🧭 Steps to Solve**
 - Navigate into the `inhere` directory  
-- Use `find` with specific conditions  
-- Read the matching file to get the password  
+- Use the `find` command with required filters  
+- Read the correct file to get the password  
 
 ---
 
 ### **💻 Commands Executed**
-
 ```bash
 ls
 cd inhere
 find . -type f -size 1033c -readable ! -executable
 cat ./maybehere07/.file2
+
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+📘 Explanation
+
+find searches all subdirectories and filters files by size, readability, and execution permission.
+
+The matching file is found inside a subdirectory.
+
+cat displays the password for the next level.
